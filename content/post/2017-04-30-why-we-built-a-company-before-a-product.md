@@ -13,6 +13,26 @@ In this guide, i want to show you how to build a Drag&Drop inside your vue appli
 
 For Uploading the images we are going to use vue dropzone, and to make the upload process more secure the Images will at first be uploaded to a .net server and from there it will be streamed to your S3 Bucket. 
 
+This will improve the overall security of your application and your AWS account since your sensitive login info is not saved inside your frontend where it could be easily exploited. Instead, it is saved in your backend application where an attacker could not access it.
+
+This article will be split into three sections. 
+
+In Section One, I will describe how to set up the UI. 
+
+Section two will all about handling the images inside that backend and forwarding them to your S3 Bucket.  You can skip this if you want to use another server technology. 
+
+In the last section, you will learn everything you need to know about creating your S3 Bucket and saving the images to it. 
+
+# Building the UI
+
+The Images are going to be uploaded using dropzone.js, this is an amazing js library providing feature-rich drag&drop functionality with upload status etc. in no time. 
+
+### Install Dropzone.js
+
+I will use the vue wrapper of dropzone, called vue-dropzone. 
+
+This enables using it like any other vue component inside the application with full dropzone functionality. 
+
 ```js
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
