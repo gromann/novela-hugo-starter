@@ -1,19 +1,10 @@
 ---
 title: Alexander Grossmann
-bio: |
-  Written by Alex. This is where your author bio lives. Share your work, your
-  joys and of course, your Twitter handle.
+bio: "I'm a freelance Software Engineer, enthusiastic about flutter, vue.js, and .net.
+  I always want to improve other's lives with my work and share my knowledge. \n"
 avatar: "/images/dennis-brotzky.jpg"
 featured: true
 social:
-- title: unsplash
-  url: https://unsplash.com
-- title: github
-  url: https://github.com
-- title: github
-  url: https://github.com
-- title: github
-  url: https://github.com
 - title: github
   url: https://github.com
 
