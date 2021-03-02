@@ -5,6 +5,5 @@ bio: 'I''m a freelance Software Engineer, enthusiastic about flutter, vue.js, an
 avatar: ''
 social: []
 featured: true
-draft: true
 
 ---
