@@ -1,5 +1,5 @@
 ---
-title: Uploading images to Amazon S3.
+title: Uploading images to Amazon S3
 date: 2020-03-01T23:00:00+00:00
 hero: "/images/hero-6.jpg"
 excerpt: A simple guide on how to securly upload images to your amazon S3 Bucket from
@@ -9,7 +9,9 @@ authors:
 - Alexander Grossmann
 
 ---
-In this guide, i want to show you how to build a Drag&Drop inside your vue application and upload the dragged Images to amazon S3 in a secure way. 
+In this guide, i want to show you how to build a Drag&Drop inside your vue application and upload the dragged Images to Amazon S3 in a secure way. 
+
+For Uploading the images we are going to use vue dropzone, and to make the upload process more secure the Images will at first be uploaded to a .net server and from there it will be streamed to your S3 Bucket. 
 
 ```js
 import React from "react";
