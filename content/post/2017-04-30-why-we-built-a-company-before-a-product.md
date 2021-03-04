@@ -32,9 +32,9 @@ The Images are going to be uploaded using dropzone.js, this is an amazing js lib
 I will use the vue wrapper of dropzone, called vue-Dropzone [https://rowanwins.github.io/vue-dropzone/docs/dist/#/installation](https://rowanwins.github.io/vue-dropzone/docs/dist/#/installation "vue-dropzone").
 
 First of all we are adding dropzone to our project.
-
+```
     npm install vue2-dropzone
-
+```
 After the installation, you have full access to the dropzone.js functionality documented under: , and it could be imported like any other vue-component.
 
 Next, we will set up the dropzone component, this should look something like this: 
@@ -44,7 +44,7 @@ Next, we will set up the dropzone component, this should look something like thi
 If The Image was uploaded successfully, it will be displayed like on the left, with the image name on Huver. 
 
 Since we do not allow duplicated images on our S3 Bucket, adding the same Image twice will lead to an error (right), the image will be marked and on hover, the error message will be displayed.
-
+```jsx
     <template>
       <div>
         {{ label }}
@@ -132,7 +132,7 @@ Since we do not allow duplicated images on our S3 Bucket, adding the same Image 
       }
     };
     </script>
-
+```
 In the above code, we first import the dropzone component and display a label given as a prop above it. 
 
 The options passed to the component are defined in the dropOptions object.
@@ -158,26 +158,6 @@ These are the circumstances that suffocate creativity and destroy value in an or
 
 ## This is a secondary heading
 
-    import React from "react";
-    import { ThemeProvider } from "theme-ui";
-    import theme from "./theme";
-    
-    export default props => (
-      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-    );
-
-## hhh
-
-    import React from "react";
-    import { ThemeProvider } from "theme-ui";
-    import theme from "./theme";
-    
-    export default props => (
-      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-    );
-
-## This is a secondary heading
-
 ```jsx
 import React from "react";
 import { ThemeProvider } from "theme-ui";
@@ -189,6 +169,16 @@ export default props => (
 ```
 
 These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
+
+## This is a secondary heading
+
+    import React from "react";
+    import { ThemeProvider } from "theme-ui";
+    import theme from "./theme";
+    
+    export default props => (
+      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+    );
 
 ***
 
