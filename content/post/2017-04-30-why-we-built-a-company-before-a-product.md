@@ -1,10 +1,9 @@
 ---
-title: Uploading images to Amazon S3
+title: Build Drag&Drop upload components in no time using Dropzone.js
 date: 2021-03-03T23:00:00+00:00
 hero: "/images/hero-6.jpg"
-excerpt: A simple guide on how to securly upload images to your amazon S3 Bucket from
-  an vue.js frontend and an .net Core 3.1 Backend.
-timeToRead: 10
+excerpt: 'A simple guide on how to build feature rich upload components inside vue.js.. '
+timeToRead: 5
 authors:
 - Alexander Grossmann
 
