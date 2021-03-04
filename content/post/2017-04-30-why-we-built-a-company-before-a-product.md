@@ -135,6 +135,35 @@ Since we do not allow duplicated images on our S3 Bucket, adding the same Image 
 
 In the above code, we first import the dropzone component and display a label given as a prop above it. 
 
+The options passed to the component are defined in the following object.
+
+          dropOptions: {
+            url: "yourAPIEndpoint",
+            thumbnailWidth: 150,
+            addRemoveLinks: true,
+            maxFilesize: 3,
+            accept: function(file, done) {
+              console.log(file);
+              if (
+                file.type.toLowerCase() != "image/jpg" &&
+                file.type.toLowerCase() != "image/gif" &&
+                file.type.toLowerCase() != "image/jpeg" &&
+                file.type.toLowerCase() != "image/png"
+              ) {
+                done("Invalid file");
+              } else {
+                done();
+              }
+            },
+            headers: {
+              "Cache-Control": null,
+              "X-Requested-With": null,
+              withCredentials: true
+            }
+          }
+        };
+      },
+
 # This is a primary heading
 
 Do they have the resources necessary to execute on their ideas? Or are they constantly under pressure to pluck only the lowest-hanging fruit through bare minimum means, while putting their greatest ambitions on the back-burner?
