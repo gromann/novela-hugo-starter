@@ -1,6 +1,6 @@
 ---
 title: Uploading images to Amazon S3
-date: 2020-03-01T23:00:00+00:00
+date: 2021-03-03T23:00:00+00:00
 hero: "/images/hero-6.jpg"
 excerpt: A simple guide on how to securly upload images to your amazon S3 Bucket from
   an vue.js frontend and an .net Core 3.1 Backend.
@@ -135,34 +135,13 @@ Since we do not allow duplicated images on our S3 Bucket, adding the same Image 
 
 In the above code, we first import the dropzone component and display a label given as a prop above it. 
 
-The options passed to the component are defined in the following object.
+The options passed to the component are defined in the dropOptions object.
 
-          dropOptions: {
-            url: "yourAPIEndpoint",
-            thumbnailWidth: 150,
-            addRemoveLinks: true,
-            maxFilesize: 3,
-            accept: function(file, done) {
-              console.log(file);
-              if (
-                file.type.toLowerCase() != "image/jpg" &&
-                file.type.toLowerCase() != "image/gif" &&
-                file.type.toLowerCase() != "image/jpeg" &&
-                file.type.toLowerCase() != "image/png"
-              ) {
-                done("Invalid file");
-              } else {
-                done();
-              }
-            },
-            headers: {
-              "Cache-Control": null,
-              "X-Requested-With": null,
-              withCredentials: true
-            }
-          }
-        };
-      },
+With this options set, our component will send an formData Object to the given URL, got removLinks to delete uploaded images again. The accept property  could be used to define the accepted file types via this filter function, with maxFileSize we are not accepting files bigger than 3mb. The headers are set according to the needs of the API. 
+
+To link the uploaded images with our data inside the app we are also appending the 
+
+Dropzone provides way more functionality, take a look at the documentation for all of these. 
 
 # This is a primary heading
 
@@ -176,6 +155,26 @@ But it takes more than good ideas to build and grow a business. It takes people 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
 These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
+
+## This is a secondary heading
+
+    import React from "react";
+    import { ThemeProvider } from "theme-ui";
+    import theme from "./theme";
+    
+    export default props => (
+      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+    );
+
+## hhh
+
+    import React from "react";
+    import { ThemeProvider } from "theme-ui";
+    import theme from "./theme";
+    
+    export default props => (
+      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+    );
 
 ## This is a secondary heading
 
