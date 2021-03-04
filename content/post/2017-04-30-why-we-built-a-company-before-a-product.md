@@ -8,9 +8,9 @@ authors:
 - alexander-grossmann
 
 ---
-In this guide, i want to show you how to build a Drag&Drop inside your vue application and upload the dragged Images to Amazon S3 in a secure way.
+In my first guide, I want to show you how to build a Drag&Drop inside your Vue.js application and upload the dragged Images to Amazon S3 in a secure way.
 
-For Uploading the images we are going to use vue dropzone, and to make the upload process more secure the Images will at first be uploaded to a .net server and from there it will be streamed to your S3 Bucket.
+For uploading the images we are going to use vue-dropzone, and to make the upload process more secure the images will at first be uploaded to a .net server and from there it will be streamed to your S3 Bucket.
 
 This will improve the overall security of your application and your AWS account since your sensitive login info is not saved inside your frontend where it could be easily exploited. Instead, it is saved in your backend application where an attacker could not access it.
 
