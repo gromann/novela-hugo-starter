@@ -5,7 +5,7 @@ hero: "/images/hero-6.jpg"
 excerpt: 'A simple guide on how to build feature rich upload components inside vue.js.. '
 timeToRead: 5
 authors:
-- Alexander Grossmann
+- alexander-grossmann
 
 ---
 In this guide, i want to show you how to build a Drag&Drop inside your vue application and upload the dragged Images to Amazon S3 in a secure way.
