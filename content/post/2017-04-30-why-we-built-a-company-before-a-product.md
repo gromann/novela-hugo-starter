@@ -1,7 +1,7 @@
 ---
 title: Build Drag&Drop upload components in no time using Dropzone.js
 date: 2021-03-03T23:00:00+00:00
-hero: "/images/hero-6.jpg"
+hero: "/images/maxwell-nelson-taiug8cpkaq-unsplash.jpg"
 excerpt: 'A simple guide on how to build feature rich upload components inside vue.js.. '
 timeToRead: 5
 authors:
@@ -18,7 +18,9 @@ This article will be split into three sections.
 
 In Section One, I will describe how to set up the UI.
 
-Section two will all about handling the images inside that backend and forwarding them to your S3 Bucket.  You can skip this if you want to use another server technology.
+Section two will all about handling the images inside that backend and forwarding them to your S3 Bucket.  
+
+You can skip this if you want to use another server technology.
 
 In the last section, you will learn everything you need to know about creating your S3 Bucket and saving the images to it.
 
