@@ -29,7 +29,7 @@ The Images are going to be uploaded using dropzone.js, this is an amazing js lib
 
 ### Install and setup Dropzone.js
 
-I will use the vue wrapper of dropzone, called vue-Dropzone [https://rowanwins.github.io/vue-dropzone/docs/dist/#/installation](https://rowanwins.github.io/vue-dropzone/docs/dist/#/installation "vue-dropzone").
+I will use the vue wrapper of dropzone, called vue-Dropzone [vue-Dropzone](https://rowanwins.github.io/vue-dropzone/docs/dist/#/installation "vue-dropzone").
 
 First of all we are adding dropzone to our project.
 
@@ -130,7 +130,7 @@ The options passed to the component are defined in the dropOptions object.
 
 With this options set, our component will send a formData Object to the given URL, got remove links to delete uploaded images again. The accept property could be used to define the accepted file types via this filter function, with maxFileSize we are not accepting files bigger than 3MB. The headers are set according to the needs of the API.
 
-You can also intercept Dropzone at different stages and execute additional code. For example, I'm appending the location where the image should be saved to the request, by simply listening to the _@vdropzone-sending_ event. Again you can find the whole list of supported events in the dropzone.js documentation [https://www.dropzonejs.com/](https://www.dropzonejs.com/ "dropzone.js docs").
+You can also intercept Dropzone at different stages and execute additional code. For example, I'm appending the location where the image should be saved to the request, by simply listening to the _@vdropzone-sending_ event. Again you can find the whole list of supported events in the  [dropzone.js documentation](https://www.dropzonejs.com/ "dropzone.js docs").
 
 This was the first part of my series on how to securely upload anything to Amazon S3. In the next part, I'm going to explain how to stream the image through a .net Core 3.1 Api and store a reference of the Image inside it.
 
