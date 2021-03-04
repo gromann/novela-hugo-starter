@@ -32,19 +32,22 @@ The Images are going to be uploaded using dropzone.js, this is an amazing js lib
 I will use the vue wrapper of dropzone, called vue-Dropzone [https://rowanwins.github.io/vue-dropzone/docs/dist/#/installation](https://rowanwins.github.io/vue-dropzone/docs/dist/#/installation "vue-dropzone").
 
 First of all we are adding dropzone to our project.
-```
+
+``` js
     npm install vue2-dropzone
 ```
+
 After the installation, you have full access to the dropzone.js functionality documented under: , and it could be imported like any other vue-component.
 
-Next, we will set up the dropzone component, this should look something like this: 
+Next, we will set up the dropzone component, this should look something like this:
 
 ![](/images/d-d-component.png)
 
-If The Image was uploaded successfully, it will be displayed like on the left, with the image name on Huver. 
+If The Image was uploaded successfully, it will be displayed like on the left, with the image name on Huver.
 
 Since we do not allow duplicated images on our S3 Bucket, adding the same Image twice will lead to an error (right), the image will be marked and on hover, the error message will be displayed.
-```jsx
+
+```js
     <template>
       <div>
         {{ label }}
@@ -75,13 +78,10 @@ Since we do not allow duplicated images on our S3 Bucket, adding the same Image 
       data() {
         return {
           selectedImages: [],
-          images: [],
           files: new FormData(),
-          file: "",
-          baseURL: Repository.defaults.baseURL,
+          baseURL: "youApiUrl",
           dropOptions: {
-            url: Repository.defaults.baseURL + "images",
-            thumbnailWidth: 150,
+            url: baseURL + "yourEndpoint",
             addRemoveLinks: true,
             maxFilesize: 3,
             accept: function(file, done) {
@@ -105,15 +105,7 @@ Since we do not allow duplicated images on our S3 Bucket, adding the same Image 
           }
         };
       },
-      created() {
-        crudEventBus.$on("clearImages", info => {
-          this.removeAllFiles();
-        });
-      },
       methods: {
-        removeAllFiles() {
-          this.$refs.myVueDropzone.removeAllFiles();
-        },
         appendLocation(file, xhr, formData) {
           formData.append("path", this.location);
         },
@@ -126,22 +118,21 @@ Since we do not allow duplicated images on our S3 Bucket, adding the same Image 
           };
           this.selectedImages.push(Image);
           this.$emit("input", this.selectedImages);
-          this.$emit("uploaded", this.selectedImages);
-          this.selectedImages.length = 0;
         },
       }
     };
     </script>
 ```
-In the above code, we first import the dropzone component and display a label given as a prop above it. 
+
+In the above code, we first import the dropzone component and display a label given as a prop above it.
 
 The options passed to the component are defined in the dropOptions object.
 
-With this options set, our component will send an formData Object to the given URL, got removLinks to delete uploaded images again. The accept property  could be used to define the accepted file types via this filter function, with maxFileSize we are not accepting files bigger than 3mb. The headers are set according to the needs of the API. 
+With this options set, our component will send a formData Object to the given URL, got remove links to delete uploaded images again. The accept property could be used to define the accepted file types via this filter function, with maxFileSize we are not accepting files bigger than 3MB. The headers are set according to the needs of the API.
 
-To link the uploaded images with our data inside the app we are also appending the 
+You can also intercept Dropzone at different stages and execute additional code. For example, I'm appending the location where the image should be saved to the request, by simply listening to the _@vdropzone-sending_ event. Again you can find the whole list of supported events in the dropzone.js documentation [https://www.dropzonejs.com/](https://www.dropzonejs.com/ "dropzone.js docs").
 
-Dropzone provides way more functionality, take a look at the documentation for all of these. 
+This was the first part of my series on how to securely upload anything to Amazon S3. In the next part, I'm going to explain how to stream the image through a .net Core 3.1 Api and store a reference of the Image inside it.
 
 # This is a primary heading
 
